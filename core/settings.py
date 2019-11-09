@@ -87,8 +87,8 @@ DATABASES = {
         'NAME': 'movie_db',
         'USER': 'root',
         'PASSWORD': '123456',
-        'HOST': 'test.niracler.com',
-        'PORT': '3306',
+        'HOST': 'demo.niracler.com',
+        'PORT': '3307',
     }
 }
 
