@@ -3,9 +3,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.mixins import ListModelMixin, CreateModelMixin, DestroyModelMixin, UpdateModelMixin
-from .models import Movie
-from .filters import MovieFiliter
-from .serializers import MovieSerializer
+from .models import Movie, MovieBoxOffice
+from .filters import MovieFiliter, MovieBoxOfficeFiliter
+from .serializers import MovieSerializer, MovieBoxOfficeSerializer
 
 
 # Create your views here.
@@ -28,3 +28,14 @@ class MovieViewSet(viewsets.GenericViewSet, ListModelMixin):
 
     def get_serializer_class(self):
         return MovieSerializer
+
+
+class MovieBoxOfficeViewSet(viewsets.GenericViewSet, ListModelMixin):
+    queryset = MovieBoxOffice.objects.all()
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    search_fields = ('mid',)
+    ordering_fields = ('mid',)
+    filter_class = MovieBoxOfficeFiliter
+
+    def get_serializer_class(self):
+        return MovieBoxOfficeSerializer

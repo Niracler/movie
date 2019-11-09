@@ -18,10 +18,10 @@ class Movie(models.Model):
     release_time = models.CharField(max_length=128, verbose_name='上映时间')
     duration = models.CharField(max_length=64, verbose_name='片长')
     movie_type = models.CharField(max_length=64, verbose_name='电影类型')
-    director = models.CharField(max_length=256, verbose_name='导演')
-    starring = models.CharField(max_length=256, verbose_name='明星')
-    production_company = models.CharField(max_length=256, verbose_name='制作公司')
-    publish_company = models.CharField(max_length=256, verbose_name='出版公司')
+    director = models.CharField(max_length=512, verbose_name='导演')
+    starring = models.CharField(max_length=512, verbose_name='明星')
+    production_company = models.CharField(max_length=512, verbose_name='制作公司')
+    publish_company = models.CharField(max_length=512, verbose_name='出版公司')
     created = models.DateTimeField(verbose_name='爬取时间')
 
     class Meta:

@@ -1,5 +1,5 @@
 import django_filters
-from .models import Movie
+from .models import Movie, MovieBoxOffice
 
 
 class MovieFiliter(django_filters.rest_framework.FilterSet):
@@ -19,4 +19,15 @@ class MovieFiliter(django_filters.rest_framework.FilterSet):
         fields = [
             'mid', 'name', 'english_name', 'release_year',
             'box_office', 'area', 'area_id', 'ranking', 'created'
+        ]
+
+
+class MovieBoxOfficeFiliter(django_filters.rest_framework.FilterSet):
+    """电影信息的api的过滤器"""
+    mid = django_filters.CharFilter(field_name='mid')
+
+    class Meta:
+        model = MovieBoxOffice
+        fields = [
+            'mid',
         ]
