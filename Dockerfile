@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.7-alpine
+FROM python:3.7
 
 #设置时区
 ENV TZ "Asia/Shanghai"
@@ -13,8 +13,6 @@ WORKDIR /usr/src/app
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 #install any needed pacakges in requirements.txt，你要把所有需要安装的Python模块加到这文件中。
 COPY requirements.txt ./
