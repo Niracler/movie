@@ -1,10 +1,9 @@
 # 三天为期的笔试题
 
+## 安装
+
 ```shell script
-$ python manage.py makemigrations
-$ python manage.py migrate
-$ python manage.py runserver 0.0.0.0:8001
-$ python manage.py createsuperuser
+$ docker-compose up -d
 ```
 
 ## 参考资料
